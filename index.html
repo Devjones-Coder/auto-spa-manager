@@ -1,22 +1,41 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- TODO: Set the document title to the name of your application -->
-    <title>Lovable App</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <title>Demo Stage - Agendamento de Lavagens</title>
+    <meta name="description" content="Sistema completo de agendamento para lavagem de carros com gestão inteligente de horários" />
+    <meta name="author" content="Demo Stage" />
 
-    <!-- TODO: Update og:title to match your application name -->
-    <meta property="og:title" content="Lovable App" />
-    <meta property="og:description" content="Lovable Generated Project" />
+    <meta property="og:title" content="Demo Stage - Agendamento de Lavagens" />
+    <meta property="og:description" content="Sistema completo de agendamento para lavagem de carros com gestão inteligente de horários" />
     <meta property="og:type" content="website" />
     <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
 
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@Lovable" />
+    <meta name="twitter:site" content="@lovable_dev" />
     <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+    
+    <!-- Inicialização do tema antes do React renderizar -->
+    <script>
+      (function() {
+        const stored = localStorage.getItem('theme');
+        const root = document.documentElement;
+        
+        if (!stored) {
+          // Primeira vez: forçar dark mode
+          root.classList.add('dark');
+          localStorage.setItem('theme', 'dark');
+        } else if (stored === 'light') {
+          // Apenas se o usuário explicitamente escolheu light
+          root.classList.remove('dark');
+        } else {
+          // Tema dark (padrão)
+          root.classList.add('dark');
+        }
+      })();
+    </script>
   </head>
 
   <body>
